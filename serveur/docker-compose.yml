@@ -10,6 +10,7 @@ services:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - TZ=Europe/Paris
     volumes:
       - db_data:/var/lib/mysql
 
@@ -18,7 +19,7 @@ services:
     container_name: glpi_web
     restart: always
     environment:
-      - TIMEZONE=Europe/Paris
+      - TZ=Europe/Paris
     depends_on:
       - db
     volumes:
